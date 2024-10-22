@@ -1,43 +1,25 @@
-﻿using ArpineAmiryan;
+﻿using static List.ListImp;
 using System;
-using System.ComponentModel.DataAnnotations;
 
 class Program
 {
-    static bool Palindrome(string str)
-    {
-        for (int i = 0; i < str.Length / 2; i++)
-        {
-            if (str[i] != str[str.Length - i - 1])
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     static void Main()
     {
-        Console.WriteLine("Type the string");
-        string input = Console.ReadLine().ToLower();
-        bool result = Palindrome(input);
-        Console.WriteLine(result);
+        ArrayList<int> arrayList = new ArrayList<int>();
 
-        int[] array = { 12, 6, 4, 52, 0, 8 };
-        foreach (var i in array)
-        {
-            Console.WriteLine(i + " ");
-        }
-        Console.WriteLine();
+        arrayList.AddElement(1);
+        arrayList.AddElement(26);
+        arrayList.AddElement(4);
+        arrayList.AddElement(56);
+        arrayList.AddElement(12);
 
 
-        SortingAlgorithms.MergeSort(array, 0, array.Length - 1);
-        foreach (var i in array)
-        {
-            Console.WriteLine(i + " ");
-        }
-        Console.WriteLine();
+        Console.WriteLine(arrayList.Count); 
+        arrayList.RemoveAtIndex(1); 
+        Console.WriteLine(arrayList.Count);
+        
+
+
 
     }
 }
